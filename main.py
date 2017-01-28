@@ -14,6 +14,12 @@ def on_ready():
 async def on_message(message):
     msg = message.content.lower()
     print(msg)
+
+    # if "😢" in msg or "😭" in msg or "😦" in msg:
+    #     await client.send_message(message.channel, ":wolf: don't be sad :(")
+    #     await client.send_message(message.channel, "http://i.imgur.com/IpgHf2x.gif")
+    #     return
+
     for command_symbol in settings.COMMAND_SYMBOLS:
         for command in settings.COMMANDS:
             if msg.startswith(command_symbol + command):
